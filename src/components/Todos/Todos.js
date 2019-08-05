@@ -6,21 +6,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 
 
 class ToDos extends Component {
-    state = { todos: 
-        [
-            {
-                id: 'id-1',
-                title: 'Create to do components',
-                isDone: false
-            },
-            {
-                id: 'id-2',
-                title: 'Learn basic react',
-                isDone: false
-            }
-        ]
-    
-    }
+    state = { todos: []};
     insertTodo = (x) => {
         const todo = {
             id: nextId(),
@@ -30,27 +16,22 @@ class ToDos extends Component {
         const tempTodos = [...this.state.todos]
         tempTodos.push(todo)
         this.setState({todos: tempTodos});
-    }
+    };
     setDone = (key) => {
         const todo = this.state.todos.find(x =>key ===x.id);
         todo.isDone = !todo.isDone;
         const todos = [...this.state.todos];
         todos[key] = todo;
         this.setState({todos: todos}); 
-    }
+    };
 
     deleteTodo = (key) => {
         console.log('key:', key)
         const tempTodos = this.state.todos.filter(x => x.id !== key);
         this.setState({todos: tempTodos}); 
-    }
-/* 
-One todo has this structure: {
-    id: [String],
-    title: [String],
-    isDone: [Boolean]
-}
-*/
+    };
+
+
 render() { 
     let todoDiv =  (<span> No todos remaining</span>);
     if (this.state.todos.length > 0) {
