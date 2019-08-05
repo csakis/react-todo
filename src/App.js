@@ -1,25 +1,18 @@
 import React from 'react';
-import  Todo from './components/Todo/Todo'
+import  Todos from './components/Todos/Todos';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Todo />  
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{"marginTop": "25px"}}> 
+      <Row>
+        <Todos />  
+      </Row>
+  
+    </Container>
   );
 }
 
