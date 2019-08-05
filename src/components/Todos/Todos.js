@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 
 class ToDos extends Component {
     state = { todos: []};
+
     insertTodo = (x) => {
         const todo = {
             id: nextId(),
@@ -17,6 +18,7 @@ class ToDos extends Component {
         tempTodos.push(todo)
         this.setState({todos: tempTodos});
     };
+    
     setDone = (key) => {
         const todo = this.state.todos.find(x =>key ===x.id);
         todo.isDone = !todo.isDone;
@@ -31,7 +33,6 @@ class ToDos extends Component {
         this.setState({todos: tempTodos}); 
     };
 
-
 render() { 
     let todoDiv =  (<span> No todos remaining</span>);
     if (this.state.todos.length > 0) {
@@ -44,8 +45,8 @@ render() {
                 id = {todo.id}
                 title = {todo.title}
                 isDone = {todo.isDone}
-                setDone = {(event) => this.setDone(event, todo.id)}
-                deleteTodo = {() =>{this.deleteTodo(todo.id)}}
+                setDone = {() => this.setDone(todo.id)}
+                deleteTodo = {() =>this.deleteTodo(todo.id)}
                 />   
                 )
             })

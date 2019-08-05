@@ -1,9 +1,8 @@
 import React from 'react';
-import  Todos from './components/Todos/Todos';
+import Todos from './components/Todos/Todos';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col'
-import './App.css';
+
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <Row>
         <Todos />  
       </Row>
-  
     </Container>
   );
 }
