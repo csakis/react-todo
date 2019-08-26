@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 function App() {
   return (
     <Container style={{"marginTop": "25px"}}> 
-      <Row>
+      <Row className="justify-content-center">
         <Todos />  
       </Row>
     </Container>

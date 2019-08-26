@@ -9,17 +9,7 @@ class Todo extends Component {
     return (
       <div>
         <ButtonGroup>
-          <ListGroup.Item
-            style={{ width: "300px" }}
-            onClick={this.props.setDone}
-          >
-            <span className={this.props.isDone ? "done" : ""}>
-              {this.props.title}
-            </span>
-          </ListGroup.Item>
-          <Button variant="danger" onClick={this.props.deleteTodo}>
-            X
-          </Button>
+                    {this.props.title}
         </ButtonGroup>
       </div>
     );
