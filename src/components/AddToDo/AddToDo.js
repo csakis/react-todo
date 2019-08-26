@@ -4,10 +4,9 @@ import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 class AddTodo extends Component {
-    state = {value: ''};
 
     handleButton = () => {
-            this.props.insertTodo(this.state.value);
+            this.props.insertTodo(this.props.input);
             this.setState({value: ""});
         };
     handleChange = (e) => {
@@ -17,13 +16,13 @@ class AddTodo extends Component {
     return (
     <ButtonGroup>
         <Form.Control 
-            value={this.state.value} 
+            value={this.props.input} 
             onChange={this.handleChange}
             placeholder="Enter to do" 
             />
         <Button
-            className= {this.state.value.length === 0 ? 'disabled': ''}
-            onClick = {this.state.value ? this.handleButton: null}
+            className= {this.props.input.length === 0 ? 'disabled': ''}
+            onClick = {this.props.input ? this.handleButton: null}
         >Add</Button>
     </ButtonGroup>          
           );
